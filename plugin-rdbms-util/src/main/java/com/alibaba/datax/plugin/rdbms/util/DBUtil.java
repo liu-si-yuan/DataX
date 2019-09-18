@@ -357,7 +357,7 @@ public final class DBUtil {
     private static synchronized Connection connect(DataBaseType dataBaseType,
                                                    String url, String user, String pass, String socketTimeout) {
 
-        //ob10的处理
+        //ob10的处理 TODO 1
         if (url.startsWith(com.alibaba.datax.plugin.rdbms.writer.Constant.OB10_SPLIT_STRING) && dataBaseType == DataBaseType.MySql) {
             String[] ss = url.split(com.alibaba.datax.plugin.rdbms.writer.Constant.OB10_SPLIT_STRING_PATTERN);
             if (ss.length != 3) {
@@ -700,6 +700,7 @@ public final class DBUtil {
     public static void dealWithSessionConfig(Connection conn,
                                              Configuration config, DataBaseType databaseType, String message) {
         List<String> sessionConfig = null;
+        // TODO 2 SESSION
         switch (databaseType) {
             case Oracle:
                 sessionConfig = config.getList(Key.SESSION,
@@ -713,6 +714,7 @@ public final class DBUtil {
                 DBUtil.doDealWithSessionConfig(conn, sessionConfig, message);
                 break;
             case MySql:
+            case ESGYNDB:
                 sessionConfig = config.getList(Key.SESSION,
                         new ArrayList<String>(), String.class);
                 DBUtil.doDealWithSessionConfig(conn, sessionConfig, message);

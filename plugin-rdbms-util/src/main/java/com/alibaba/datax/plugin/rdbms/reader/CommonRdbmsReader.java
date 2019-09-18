@@ -245,7 +245,7 @@ public class CommonRdbmsReader {
             try {
                 for (int i = 1; i <= columnNumber; i++) {
                     switch (metaData.getColumnType(i)) {
-
+                    //TODO 4 数据类型
                     case Types.CHAR:
                     case Types.NCHAR:
                     case Types.VARCHAR:
