@@ -161,6 +161,7 @@ public class TaskGroupContainer extends AbstractContainer {
                     //失败，看task是否支持failover，重试次数未超过最大限制
             		if(taskCommunication.getState() == State.FAILED){
                         taskFailedExecutorMap.put(taskId, taskExecutor);
+                        //TODO 1 writer
             			if(taskExecutor.supportFailOver() && taskExecutor.getAttemptCount() < taskMaxRetryTimes){
                             taskExecutor.shutdown(); //关闭老的executor
                             containerCommunicator.resetCommunication(taskId); //将task的状态重置

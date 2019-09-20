@@ -80,7 +80,7 @@ public final class WriterUtil {
         if (null == preOrPostSqls) {
             return Collections.emptyList();
         }
-
+        //TODO 4-2 writer
         List<String> renderedSqls = new ArrayList<String>();
         for (String sql : preOrPostSqls) {
             //preSql为空时，不加入执行队列
@@ -109,6 +109,7 @@ public final class WriterUtil {
     }
 
     public static String getWriteTemplate(List<String> columnHolders, List<String> valueHolders, String writeMode, DataBaseType dataBaseType, boolean forceUseUpdate) {
+        //TODO 2 write
         boolean isWriteModeLegal = writeMode.trim().toLowerCase().startsWith("insert")
                 || writeMode.trim().toLowerCase().startsWith("replace")
                 || writeMode.trim().toLowerCase().startsWith("update");
@@ -174,6 +175,7 @@ public final class WriterUtil {
 
         List<String> preSqls = originalConfig.getList(Key.PRE_SQL,
                 String.class);
+        //TODO 4-1 writer
         List<String> renderedPreSqls = WriterUtil.renderPreOrPostSqls(
                 preSqls, table);
 

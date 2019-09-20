@@ -44,6 +44,7 @@ public class CommonRdbmsWriter {
                     originalConfig.toJSON());
         }
 
+        //TODO 3 writer
         /*目前只支持MySQL Writer跟Oracle Writer;检查PreSQL跟PostSQL语法以及insert，delete权限*/
         public void writerPreCheck(Configuration originalConfig, DataBaseType dataBaseType) {
             /*检查PreSql跟PostSql语句*/
@@ -54,6 +55,7 @@ public class CommonRdbmsWriter {
 
         public void prePostSqlValid(Configuration originalConfig, DataBaseType dataBaseType) {
             /*检查PreSql跟PostSql语句*/
+            //TODO 4-0 writer
             WriterUtil.preCheckPrePareSQL(originalConfig, dataBaseType);
             WriterUtil.preCheckPostSQL(originalConfig, dataBaseType);
         }
