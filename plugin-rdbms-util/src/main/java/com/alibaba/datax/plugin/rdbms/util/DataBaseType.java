@@ -36,7 +36,6 @@ public enum DataBaseType {
     public String appendJDBCSuffixForReader(String jdbc) {
         String result = jdbc;
         String suffix = null;
-        //TODO 3 url可以条件后缀
         switch (this) {
             case MySql:
             case DRDS:
