@@ -90,13 +90,14 @@
         <module>tsdbwriter</module>
         <module>adbpgwriter</module>
         <module>gdbwriter</module>-->
+        <module>esgyndbwriter</module>
         
         <!-- common support module -->
         <module>plugin-rdbms-util</module>
         <module>plugin-unstructured-storage-util</module>
         <module>hbase20xsqlreader</module>
         <module>hbase20xsqlwriter</module>
-        <module>esgyndbwriter</module>
+
     </modules>
 
     <dependencyManagement>

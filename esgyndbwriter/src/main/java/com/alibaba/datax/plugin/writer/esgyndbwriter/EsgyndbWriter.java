@@ -1,4 +1,4 @@
-package com.alibaba.datax.plugin.reader.esgyndbwriter;
+package com.alibaba.datax.plugin.writer.esgyndbwriter;
 
 import com.alibaba.datax.common.exception.DataXException;
 import com.alibaba.datax.common.plugin.RecordReceiver;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @program: esgyndbwriter
  * @description: from DataX to esgyndb
- * @create: 2019-09-18 17:15
+ * @create: 2019-09-20 17:15
  */
 public class EsgyndbWriter extends Writer {
     private static final DataBaseType DATABASE_TYPE = DataBaseType.ESGYNDB;
@@ -100,11 +100,6 @@ public class EsgyndbWriter extends Writer {
             this.commonRdbmsWriterTask.destroy(this.writerSliceConfig);
         }
 
-        @Override
-        public boolean supportFailOver(){
-            String writeMode = writerSliceConfig.getString(Key.WRITE_MODE);
-            return "replace".equalsIgnoreCase(writeMode);
-        }
 
     }
 }

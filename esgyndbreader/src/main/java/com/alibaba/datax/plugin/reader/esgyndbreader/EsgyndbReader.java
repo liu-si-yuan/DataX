@@ -58,7 +58,6 @@ public class EsgyndbReader extends Reader {
         @Override
         public void destroy() {
             this.commonRdbmsReaderJob.destroy(this.originalConfig);
-            LOG.info("**************************** job destroy ****************************");
         }
 
         private void dealFetchSize(Configuration originalConfig) {
@@ -89,7 +88,6 @@ public class EsgyndbReader extends Reader {
             this.commonRdbmsReaderTask = new CommonRdbmsReader.Task(
                     DATABASE_TYPE ,super.getTaskGroupId(), super.getTaskId());
             this.commonRdbmsReaderTask.init(this.readerSliceConfig);
-            LOG.info("**************************** task init ****************************");
         }
 
         @Override
@@ -109,7 +107,6 @@ public class EsgyndbReader extends Reader {
         @Override
         public void destroy() {
             this.commonRdbmsReaderTask.destroy(this.readerSliceConfig);
-            LOG.info("**************************** task destroy ****************************");
         }
     }
 }
